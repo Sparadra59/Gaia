@@ -1,0 +1,12 @@
+revoir_envoye: revoir_envoye
+
+#
+#
+# Ici le code pour ta cinématique
+#
+#
+cinematique_vodax: folder cine_vodax1,cine_vodax2,cine_vodax3,cine_vodax4
+cine_vodax1: message Voici un message de cinématique !
+cine_vodax2: teleport x;y;z;Gaia
+cine_vodax3: journal add quete_envoye
+cine_vodax4: tag add revoir_envoye

@@ -1,0 +1,49 @@
+# # # Test quête # # #
+quester: 'Envoyé'
+first: accept,accept_retour,accept_retour_not
+final_event: ''
+stop: 'false'
+NPC_options:
+# Le NPC parle au joueur, seulement s'il est Citoyen d'honneur.
+  accept:
+    text: 'Peux tu me rendre un service s''il te plaît %player% ? Le royaume dont je fais partie est en grand danger !'
+    conditions: 'citoyen_honneur,!revoir_envoye'
+    pointer: 'player_accepts,player_declines'
+# Si le joueur s'est préparé
+  accept_retour:
+    text: 'Alors, t''es-tu préparé afin de sauver notre royaume ?'
+    conditions: 'revoir_envoye,full_diams_have'
+    pointer: 'pret,pas_pret'
+  accept_retour_not:
+    text: 'Je vois que tu n''as pas encore un équipement en diams ! \nVas le chercher et reviens me voir !'
+    conditions: 'revoir_envoye,!full_diams_have'
+# Si le joueur n'accepte pas la quête
+  non:
+    text: 'D''accord, si tu changes d''avis, reviens me voir !'
+# Si le joueur accepte la quête
+  oui:
+    text: 'Vraiment ? Merci beaucoup ! Je vous laisse faire vos bagages, quand vous serez prêts, venez me revoir !'
+    events: 'revoir_envoye'
+#Si le joueur est prêt, alors la cinématique va se lancer
+  prepare:
+    text: 'Parfait ! Alors, allons-y ! Mais avant tout, je vais te raconter l''histoire de notre royaume par la pensée.'
+    events: cinematique_vodax
+  pas_prépare:
+    text: 'D''accord, dès que tu seras prêt, tâche de venir me voir !'
+player_options:
+# Si le joueur accepte la quête, il va sélectionner ceci.
+  player_accepts:
+    text: 'Avec plaisir !'
+    pointer: 'oui'
+# Si ne joueur n'accepte pas, alors il va sélectionner ceci.
+  player_declines:
+    text: 'J''ai autre chose à faire, désolé.'
+    pointer: 'non'
+# Si le joueur n'est pas prêt
+  pas_prêt:
+    text: 'Non, pas encore'
+    pointer: 'non_prepare'
+# Si le joueur est prêt
+  prêt:
+    text: 'Je suis fin prêt'
+    pointer: 'prepare'

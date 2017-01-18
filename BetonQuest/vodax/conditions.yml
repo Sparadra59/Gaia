@@ -1,0 +1,9 @@
+#
+# 
+#
+revoir_envoye: tag revoir_envoye
+full_diams_have: and full_diams_have1,full_diams_have2,full_diams_have3,full_diams_have4
+full_diams_have1: item diamond_helmet
+full_diams_have2: item diamond_body
+full_diams_have3: item diamond_legs
+full_diams_have4: item diamond_boots
