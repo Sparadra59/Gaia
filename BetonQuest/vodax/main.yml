@@ -1,4 +1,3 @@
 npcs:
-  '7': innkeeper
-  '1': amiral
-  '8': man
+  '59' : garde_nord1
+  '60' : garde_nord2
