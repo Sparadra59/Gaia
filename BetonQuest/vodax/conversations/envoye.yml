@@ -1,12 +1,12 @@
 # # # Test quête # # #
-quester: 'Envoyé'
+quester: 'Gregore'
 first: accept,accept_retour,accept_retour_not
 final_event: ''
 stop: 'false'
 NPC_options:
 # Le NPC parle au joueur, seulement s'il est Citoyen d'honneur.
   accept:
-    text: 'Peux tu me rendre un service s''il te plaît %player% ? Le royaume dont je fais partie est en grand danger !'
+    text: 'Bonjour à toi, %player% ! Peux tu me rendre un service s''il te plaît ? Je suis Gregore, et le royaume dont je fais partie est en grand danger !'
     conditions: 'citoyen_honneur,!revoir_envoye'
     pointer: 'player_accepts,player_declines'
 # Si le joueur s'est préparé
