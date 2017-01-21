@@ -1,23 +1,58 @@
 quester: 'Garde'
-first: accept
+first: 'accept,retour_svinkels,svinkels_pas_encore_vu,bûches_de_bob,bois_pas_donné,bois_pas_cherché,fin_de_quête'
 NPC_options:
+  fin_de_quête:
+    text: 'Merci beaucoup, enfin j'ai mon émeraude adorée ! Je ne sais pas comment te remercier ! Tiens, je t'offre cette étiquette, en guise d'amitié.'
+    condition: 'bois_donné'
+  bois_pas_cherché:
+    text: 'Tu n''as pas trouvé Bob ? Regarde sur ton journal, ses coordonnées y sont affichées.'
+    condition: 'aller_voir_bob,!bûches_de_bob'
+  bois_pas_donné:
+    text: 'Alors, qu''attends-tu pour donner le bois à Svinkels ?'
+    condition: 'bois_montré_à_garde,!bois_donné'
+  bûches_de_bob:
+    text: 'Je vois que tu as les bûches de Bob ! Parfait, maintenant vas les donner à Svinkels.'
+    condition: 'bûches_de_bob'
   accept:
-    text: 'Bonjour à toi, jeune aventurier, et bienvenue au royaume du Nord ! J'ai besoin de toi pour quelque chose, veux-tu bien m'aider ?'
+    text: 'Bonjour à toi, jeune aventurier, et bienvenue au royaume du Nord ! J''ai besoin de toi pour quelque chose, veux-tu bien m''aider ?'
+    condition: '!quest_gardenord1_started'
     pointer: 'quest_accept,quest_deny'
-  quest_accepted:p
-    text: 'Merci beaucoup ! J''ai perdu quelque chose qui m'est très important, c'est une émeraude sacrée. Mais ce sournois de Svinkels l''a trouvée et ne veut pas me la rendre ! Actuellement je ne peux pas y aller car je dois rester à mon poste, peux-tu aller le voir s''il te plaît %player% ?
-    pointer: accepte,decline
-  quest_denied: 'D'accord, merci quand même ! Si tu changes d'avis, je suis toujours là !'
+  réponse:
+    text: 'Ah, cela ne m''étonne pas de Svinkels. Vas voir Bob, le bricoleur, dis-lui que tu viens de ma part, il me doit un service. Ensuite, reviens me voir !' 
+    event: 'aller_voir_bob'
+    pointer: 'retourner'
+  retour_svinkels:
+    text: 'Alors, qu''a-t''il dit ?'
+    condition: 'quest_gardenord1_started,retour_svinkels'
+    pointer: 'ce_que_svinkels_a_dit'
+  svinkels_pas_encore_vu:
+    text: 'Tu n''as pas encore été voir Svinkels ? Qu''attends-tu ?'
+    condition: 'quest_gardenord1_started,!retour_svinkels'
+    pointer: 'retourner'
+  quest_accepted:
+    text: 'Merci beaucoup ! J''ai perdu quelque chose qui m''est très important, c''est une émeraude sacrée. Mais ce sournois de Svinkels l''a trouvée avant moi et ne veut pas me la rendre ! Actuellement je ne peux pas y aller car je dois rester à mon poste, peux-tu aller le voir s''il te plaît %player% ?'
+    pointer: 'accepte,decline'
+  start:
+    text: 'Vraiment ? Merci beaucoup ! Il faut que tu ailles parler à Svinkels et négocier avec lui.'
+    event: 'quest_gardenord1_started'
+  quest_denied: 
+    text: 'D''accord, merci quand même ! Si tu changes d'avis, je suis toujours là !'
 player_options:
   quest_accept:
     text: 'Je suis partant ! Mais, que dois-je faire ?'
     pointer: 'quest_accepted'
   quest_deny:
-    text: 'Je suis désolé, mais je ne peux pas pour l'instant'
+    text: 'Je suis désolé, mais je ne peux pas pour l''instant'
     pointer: 'quest_denied'
   accepte:
     text: 'Avec plaisir !'
     pointer: 'start'
   decline:
     text: 'Désolé, je ne me sens pas à la hauteur'
-    pointer: 'stop'
+    pointer: 'quest_denied'
+  ce_que_svinkels_a_dit:
+    text: 'Il m''a dit qu''il donnerait l''émeraude uniquement s''il a 16 bûches'
+    pointer: 'réponse'
+  retourner:
+    text: 'J''y vais de suite !'
+# bûches_de_bob,bois_donné,quest_gardenord1_started,retour_svinkels,bois_montré_à_garde,aller_voir_bob
