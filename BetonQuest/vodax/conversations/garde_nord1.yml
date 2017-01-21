@@ -12,6 +12,7 @@ NPC_options:
     condition: 'bois_montré_à_garde,!bois_donné'
   bûches_de_bob:
     text: 'Je vois que tu as les bûches de Bob ! Parfait, maintenant vas les donner à Svinkels.'
+    event: 'bois_montré_à_garde'
     condition: 'bûches_de_bob'
   accept:
     text: 'Bonjour à toi, jeune aventurier, et bienvenue au royaume du Nord ! J''ai besoin de toi pour quelque chose, veux-tu bien m''aider ?'
@@ -55,4 +56,4 @@ player_options:
     pointer: 'réponse'
   retourner:
     text: 'J''y vais de suite !'
-# bûches_de_bob,bois_donné,quest_gardenord1_started,retour_svinkels,bois_montré_à_garde,aller_voir_bob
+# bois_donné,quest_gardenord1_started,retour_svinkels,bois_montré_à_garde,aller_voir_bob
