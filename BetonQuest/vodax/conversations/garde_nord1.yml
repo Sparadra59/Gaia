@@ -1,0 +1,23 @@
+quester: 'Garde'
+first: accept
+NPC_options:
+  accept:
+    text: 'Bonjour à toi, jeune aventurier, et bienvenue au royaume du Nord ! J'ai besoin de toi pour quelque chose, veux-tu bien m'aider ?'
+    pointer: 'quest_accept,quest_deny'
+  quest_accepted:p
+    text: 'Merci beaucoup ! J''ai perdu quelque chose qui m'est très important, c'est une émeraude sacrée. Mais ce sournois de Svinkels l''a trouvée et ne veut pas me la rendre ! Actuellement je ne peux pas y aller car je dois rester à mon poste, peux-tu aller le voir s''il te plaît %player% ?
+    pointer: accepte,decline
+  quest_denied: 'D'accord, merci quand même ! Si tu changes d'avis, je suis toujours là !'
+player_options:
+  quest_accept:
+    text: 'Je suis partant ! Mais, que dois-je faire ?'
+    pointer: 'quest_accepted'
+  quest_deny:
+    text: 'Je suis désolé, mais je ne peux pas pour l'instant'
+    pointer: 'quest_denied'
+  accepte:
+    text: 'Avec plaisir !'
+    pointer: 'start'
+  decline:
+    text: 'Désolé, je ne me sens pas à la hauteur'
+    pointer: 'stop'
