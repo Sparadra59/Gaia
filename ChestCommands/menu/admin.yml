@@ -341,6 +341,20 @@ builder9:
   POSITION-X: 6
   POSITION-Y: 6
   
+builder10:
+  COMMAND: 'op: tppos -8694 78 4418'
+  NAME: '&6Téléportation Ruines'
+  ID: '0048'
+  LORE:
+    - 'Projet Ruines'
+    - 'Ici se fera la quête de Tatsu'
+    - '&aBosser sur les quêtes et stopper le build !'
+    - ' '
+    - 'Sera build et codé par MathieuxZ88,'
+    -.'Sparadra59 et Cubto_mania'
+  POSITION-X: 8
+  POSITION-Y: 5
+  
 blocker1:
   NAME: ' '
   ID: '160:7'
