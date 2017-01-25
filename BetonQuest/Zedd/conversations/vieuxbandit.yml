@@ -34,7 +34,7 @@ NPC_options:
   nopq1:
     text: 'Permet moi d''en douter, mais fais comme bon te semble !'
   startq1:
-    text: 'Bien! Tu peux m''emprunter une canne à pêche si tu veux, dans mon coffre. Tu y trouvera également quelques bûches pour faire fonctionner le four.'
+    text: 'Bien! Voici une canne à pêche et quelques bûches pour faire fonctionner le four.'
     events: or_startq1
   or_reward1:
     text: 'Aaaah je commencais justement à avoir un petit creux !'
