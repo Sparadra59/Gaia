@@ -1,0 +1,18 @@
+questeur: 'Barman'
+first: start
+stop: 'false'
+###########
+#         #
+#   NPC   #
+#         #
+###########
+npc_options:
+  start:
+    text: 
+#############
+#           #
+#   Joueur  #
+#           #
+#############
+player_options:
+ 

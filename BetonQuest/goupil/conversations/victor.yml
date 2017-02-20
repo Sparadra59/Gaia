@@ -1,0 +1,41 @@
+quester: 'Victor'
+first: start
+stop: 'false'
+NPC_options:
+  start:
+    text: 'En quoi puis-je vous aider &2%player% &a&o?'
+    pointers: qui,nourriture
+  qui_rep:
+    text: 'Je suis le cuisinier du navire, la cuisine est mon royaume !'
+  nourriture_rep:
+    text: 'Non. Il vous faudra en acheter au &dGrand Marché&a&o, mais rien ne vaut une préparation faite maison! Pour vous faire à manger, il vous faudra cultiver la terre ou chasser.'
+    pointers: cultiver,chasser
+  cultiver_rep:
+    text: 'Ah non ! L''&2Intendant &a&oveille et ne vous laissera pas faire ça n''importe où ! Pensez à aller le voir pour louer une maison avec un lopin de terre que vous pourrez cultiver ! Il est dans le &dChâteau d''Athelas &a&o!'
+  chasser_rep:
+    text: 'Afin d''assurer la nourriture pour tous, vous pouvez chasser où bon vous semble ! Il paraît que le Continent Est regorge d''animaux sauvages !'
+    pointers: continent_est
+  continent_est_rep:
+    text: 'C''est un vaste continent tout à fait à l''Est, il n''y a aucune civilisation stable là-bas. Vous pouvez donc vous faire attaquer et piller par n''importe qui et n''importe quoi, mais il n''en reste pas moins que la terre y est libre d''accès, d''exploitation et de construction... '
+    pointers: towny
+  towny_rep:
+    text: 'Et bien une rumeur raconte que toutes les constructions faites par la main de l'homme finissent tous par disparaitre au bout de 7 jours ... ou bien avant. Bien qu'une autre rumeur fasse état de quelques irrésistibles gaulois qui lutte tant bien que mal de survivre dans des villages qui ne disparaissent pas grâce aux offrances offertes à Gaia, mais ce ne sont bien sur que des rumeurs.'
+player_options:
+  qui:
+    text: 'Qui êtes-vous ?'
+    pointers: qui_rep
+  nourriture:
+    text: 'J''ai faim, vous auriez pas quelque chose à manger ?'
+    pointers: nourriture_rep
+  cultiver:
+    text: 'Cultiver la terre ? Comme ça ? N''importe où ?'
+    pointers: cultiver_rep
+  chasser:
+    text: 'Chasser ? Je peux faire ça où ?'
+    pointers: chasser_rep
+  continent_est:
+    text: 'C''est quoi ce continent dont vous parlez ?'
+    pointers: continent_est_rep
+  towny:
+    text: 'Ce ... continent est-il vraiment si sauvage ?'
+    pointers: towny_rep
