@@ -1,9 +1,10 @@
 personnage pnj
 
 localisation : casino
- '' : barman
- '450' : danseuse alias Idéfix
- '112' : bookmaker alias Owenson
- '110' : interpol alias Alfie
- '14' : victor
+npcs
+ '': barman
+ '450': danseuse alias Idéfix
+ '112': bookmaker alias Owenson
+ '110': interpol alias Alfie
+
  
