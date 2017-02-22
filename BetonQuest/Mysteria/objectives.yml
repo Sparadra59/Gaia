@@ -1,4 +1,9 @@
 #
+# Kendan #
+#
+ken_qE1: location -100;200;300;Gaia;5 events:ken_qE2
+ken_qkE1: mmobkill bossken amount:1 events:andr_qE2
+#
 # Garderos & Général Kinsot #
 #
 #voir_superieur1: location -9009;64;4626;Gaia;5 conditions:deja_vu events:voir_superieur_done
@@ -21,7 +26,7 @@ akt_objkillB9: mmobkill brigand amount:1 events:akt_brigkilled9,Bkill9
 akt_objkillB10: mmobkill brigand amount:1 events:Bkill10,Bkilled,akt_qE2
 #
 akt_qE2: location -8869;82;4564;Gaia;5 conditions:akt_qE2 events:akt_objq2
-akt_objkill2: mmobkill brigand amount:25 events:akt_qE3 notify
+akt_objkill2: mmobkill mercenaire amount:25 events:akt_qE3 notify
 #
 # Loukran #
 #
