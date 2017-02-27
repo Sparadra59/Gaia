@@ -1,8 +1,8 @@
 #
 # Kendan #
 #
-ken_qE1: location -100;200;300;Gaia;5 events:ken_qE2
-ken_qkE1: mmobkill bossken amount:1 events:andr_qE2
+ken_q1E1: location -6874;64;2640;Gaia;12 events:ken_q1E2
+ken_qkE1: mmobkill bossken amount:1 events:andr_q1E2
 #
 # Garderos & Général Kinsot #
 #
