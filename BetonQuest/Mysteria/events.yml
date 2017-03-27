@@ -25,10 +25,10 @@ andr_q1E12: tag add andr_q1E1
 andr_q1E13: journal add andr_q1E1
 andr_q1E14: 'message &d&oVous partez à la rencontre de Kendan le marchand pour récuperer l''argent d''Andrish'
 #
-andr_q1E2: folder andr_q1E22,andr_q1E23,andr_q1E24,andr_q1E25
+andr_q1E2: folder andr_q1E22,andr_q1E23,andr_q1E24,andr_q1E25,andr_q1E26,andr_q1E27
 andr_q1E22: tag del ken_qrefE1
-andr_q1E23: tag del andr_qE1
-andr_q1E24: tag add andr_qE2
+andr_q1E23: tag del andr_q1E1
+andr_q1E24: tag add andr_q1E2
 andr_q1E25: journal del andr_q1E1
 andr_q1E26: journal add andr_q1E2
 andr_q1E27: 'message &a&oAprès cette bonne leçon donnée à Kendan, j''ai récuperé l''argent !'
@@ -37,13 +37,13 @@ andr_q1done: folder andr_q1done2,andr_q1done3,andr_q1done4,andr_q1done5
 andr_q1done2: tag del andr_q1E2
 andr_q1done3: tag add andr_q1done
 andr_q1done4: journal del andr_q1E2
-andr_q1done5: default.quest_point_1
+andr_q1done5: 'command bq event default.quest_point_1'
 #                #
 #   PNJ Kendan   #
 #                #
 ken_conv: conversation Kendan
 #
-ken_quest_acc: folder ken_qaccE1,ken_qaccE12,ken_qaccE13
+ken_quest_acc: folder ken_qaccE1,ken_qaccE12,ken_qaccE13,ken_qaccE14
 ken_qaccE1: tag add ken_qaccE1
 ken_qaccE12: 'message &d&oDirection le village désert pour cette fameuse découverte !'
 ken_qaccE13: journal add ken_q1E1
@@ -57,7 +57,7 @@ ken_qrefE14: tag add ken_qrefE1
 #
 ken_q1E2: folder ken_q1E22,ken_q1E23,ken_q1E24,ken_q1E25,ken_q1E26
 ken_q1E22: tag del ken_qaccE1
-ken_q1E23: tag add ken_qE2
+ken_q1E23: tag add ken_q1E2
 ken_q1E24: 'message &a&oVous êtes arrivé ! Regardez les alentours pour trouver la cachette !'
 ken_q1E25: journal del ken_q1E1
 ken_q1E26: journal add ken_q1E2
@@ -90,22 +90,45 @@ kom_q1E27: give ronke_letter
 ronke_letter: take ronke_letter
 journal_kom_q1E2: journal del kom_q1E2
 #
-kom_dest: folder kom_dest1,msg_kom_dest1
-kom_dest1: movenpc 62 -6911;70;2634;Gaia wait:20 done:kom_dest2,msg_kom_dest2 fail:msg_cant_dest2
+#
+kom_dest: folder kom_dest1,fold_kom_dest1
+#
+#
+kom_dest1: movenpc 62 -6897;74;2651;Gaia wait:20 done:kom_dest2
+kom_dest2: movenpc 62 -6912;71;2634;Gaia wait:40 done:kom_dest3
+kom_dest3: movenpc 62 -6928;70;2621;Gaia wait:40 done:kom_dest4
+kom_dest4: movenpc 62 -6937;70;2599;Gaia wait:40 done:kom_dest5
+kom_dest5: movenpc 62 -6937;66;2578;Gaia wait:40 done:kom_dest6
+kom_dest6: movenpc 62 -6917;73;2571;Gaia wait:40 done:kom_dest7
+kom_dest7: movenpc 62 -6901;74;2546;Gaia wait:40 done:kom_dest8
+kom_dest8: movenpc 62 -6888;74;2537;Gaia wait:40
+#
+#
+fold_kom_dest1: folder msg_kom_dest1,fold_kom_dest2 delay:7
+fold_kom_dest2: folder msg_kom_dest2,fold_kom_dest3 delay:20
+fold_kom_dest3: folder msg_kom_dest3,fold_kom_dest4 delay:22
+fold_kom_dest4: folder msg_kom_dest4,fold_kom_dest5 delay:30
+fold_kom_dest5: folder msg_kom_dest5,folder_kom_done delay:12
+folder_kom_done: folder ken_q1E3,msg_kom_dest5_bis,kom_dest_bis1
+#
 msg_kom_dest1: 'message &2Komyl &f: &a&oL''endroit ou nous nous dirigeons, est un endroit ayant une histoire.'
-kom_dest2: movenpc 62 -6932;69;2614;Gaia wait:20 done:kom_dest3,msg_kom_dest3 fail:msg_cant_dest3
 msg_kom_dest2: 'message &2Komyl &f: &a&oIl est aussi passionnant que dangeureux ! La plus grande des reliques s''y cache.'
-msg_cant_dest2: 'message &c&oLe PNJ est actuellement indisponible'
-kom_dest3: movenpc 62 -6935;70;2594;Gaia wait:20 done:kom_dest4,msg_kom_dest4 fail:msg_cant_dest4
 msg_kom_dest3: 'message &2Komyl &f: &a&oLes âmes des 4 grands Templiers deumeurent encore en ces lieux.'
-msg_cant_dest3: 'message &c&oLe PNJ est actuellement indisponible'
-kom_dest4: movenpc 62 -6914;77;2574;Gaia wait:20 done:kom_dest5,msg_kom_dest5 fail:msg_cant_dest5
-msg_kom_dest4: 'message &2Komyl &f: &a&oSi tu souhaites en savoir plus, viens me revoir, cette histoire est pleine de mots cachés'
-msg_cant_dest4: 'message &c&oLe PNJ est actuellement indisponible'
-kom_dest5: movenpc 62 -6894;76;2554;Gaia wait:20 done:msg_kom_dest5_bis,ken_q1E3
-msg_kom_dest5: 'message &2Komyl &f: &a&oNous approchons du temple sacré ! Attends toi à voir une merveille !'
-msg_cant_dest5: 'message &c&oLe PNJ est actuellement indisponible'
+msg_kom_dest4: 'message &2Komyl &f: &a&oNous approchons du temple sacré ! Attends toi à voir une merveille !'
+msg_kom_dest5: 'message &2Komyl &f: &a&oSi tu souhaites en savoir plus, viens me revoir, cette histoire est pleine de mots cachés'
 msg_kom_dest5_bis: 'message &2Komyl &f: &a&oNous y voilà ! Le temple des Templiers de l''étoile sobre ! Viens me revoir après ton périple, j''aurais sûrement quelque chose à te confier !'
+#
+kom_dest_bis1: movenpc 62 -6901;74;2546;Gaia wait:40 done:kom_dest_bis2
+kom_dest_bis2: movenpc 62 -6917;73;2571;Gaia wait:40 done:kom_dest_bis3
+kom_dest_bis3: movenpc 62 -6937;66;2578;Gaia wait:40 done:kom_dest_bis4
+kom_dest_bis4: movenpc 62 -6937;70;2599;Gaia wait:40 done:kom_dest_bis5
+kom_dest_bis5: movenpc 62 -6928;70;2621;Gaia wait:40 done:kom_dest_bis6
+kom_dest_bis6: movenpc 62 -6912;71;2634;Gaia wait:40 done:kom_dest_bis7
+kom_dest_bis7: movenpc 62 -6897;74;2651;Gaia wait:20 done:kom_dest_bis8
+kom_dest_bis8: movenpc 62 -6889;74;2653;Gaia wait:20
+#
+#
+#               #
 #               #
 #   PNJ Ronke   #
 #               #

@@ -8,7 +8,7 @@ stop: 'false'
 NPC_options:
   welcome:
     text: 'Bonjour voyageur. Qui es-tu ? Et que viens tu faire ici ?'
-    conditions: 'ken_qE2,andr_q2E2'
+    conditions: ken_q1E2
     pointers: bonjour
   infos1:
     text: 'Tu parles sûrement du bouclier des 4 Templiers de l''étoile sobre, il y a une entrée pas loin.'
